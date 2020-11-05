@@ -18,6 +18,11 @@ function createDataHandler(socket) {
         if (type === 2) {
             res = addChatMessage(message);
         }
+
+        if (type === 3) {
+            socket.destroy();
+            return;
+        }
     
         if (!res) {
             res = {
